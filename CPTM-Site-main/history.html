@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- Começo Cabeça - Links e Script -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/csshistory.css">
+  <link rel="icon" href="assets/img/favicons/favicon.ico">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script>
+    function ocultarExpli() {
+      document.querySelector(".explicacao").style.visibility = 'hidden';
+    }
+    function mostrarExpli() {
+      document.querySelector(".explicacao").style.visibility = 'visible';
+      ocultarPubli();
+    }
+    function mostrarPubli() {
+      document.querySelector(".espaco-publicacao").style.display = 'flex';
+      ocultarExpli();
+    }
+    function ocultarPubli() {
+      document.querySelector(".espaco-publicacao").style.display = 'none';
+      
+    }
+
+    function selecionar() {
+      document.querySelector("#inputFile").click();
+    }
+    document.querySelector("#inputFile").addEventListener('change', () => {
+      const arquivoSelecionado = document.querySelector("#inputFile").files[0];
+      if (arquivoSelecionado) {
+        alert('Arquivo selecionado: ' + arquivoSelecionado.name);
+      }
+    });
+    function chamarCal() {
+      document.getElementById("datePicker").focus();
+    }
+  </script>
+  <title>History Channel</title>
+</head>
+<!-- Final Cabeça -->
+
+<!-- Começo Corpo -->
+
+<body class="custom-red-background">
+  <input id="inputFile" type="file" accept="image/png, image/jpeg" style="display: none;">
+
+  <!-- header -->
+  <header>
+    <div class="imgLogo">
+      <a href="loadingPage.html">
+        <img src="assets/img/logoheader.png">
+      </a>
+    </div>
+    <div class="links">
+      <a href="login.html">Entrar</a>
+      <a href="cadastro.html">Cadastrar-se</a>
+    </div>
+  </header>
+  <!-- fim do header -->
+
+  <!-- Começo das publicações -->
+  <!-- Aba de Publicar Historia -->
+  <section class="espaco-publicacao" style="display:none">
+    <form id="formPubli">
+      <div class=" containerHistoria">
+        <div class="publicacao-titulo">
+          <h1>Compartilhe sua história</h1>
+        </div>
+        <div class="publicacao-escrita">
+          <textarea class="publi" name="textarea" rows="5" cols="30" placeholder="Escreva" required></textarea>
+        </div>
+
+        <div class="publicacao-legenda">
+          <p>Legenda</p>
+          <textarea id="publicacao-legenda-text" name="textarea" rows="3" cols="30" placeholder="Escreva"
+            required></textarea>
+        </div>
+
+        <div class="publicacao-icons">
+
+          <i id="publicacao-btn-emoji" class="bi bi-emoji-grin-fill"></i>
+          <select data-mdb-select-init required>
+            <option value="1">Feliz</option>
+            <option value="2">Entusiasmado(a)</option>
+            <option value="3">Surpreso(a)</option>
+            <option value="4">Comovido(a)</option>
+            <option value="5">Emocionado(a)</option>
+            <option value="6">Apaixonado(a)</option>
+          </select>
+          <i id="publicacao-btn-loc" class="bi bi-geo-alt-fill"></i>
+
+          <select data-mdb-select-init required>
+
+            <!-- Linha 7 - Rubi -->
+            <option value="1">Estação Luz</option>
+            <option value="2">Estação Palmeiras-Barra-Funda</option>
+            <option value="3">Estação Pirituba</option>
+            <option value="4">Estação Perus</option>
+            <option value="5">Estação Franco da Rocha</option>
+            <option value="6">Estação Jordanésia</option>
+            <option value="7">Estação Caieiras</option>
+            <option value="8">Estação Francisco Morato</option>
+            <option value="9">Estação Atibaia</option>
+
+            <!-- Linha 9 - Esmeralda -->
+            <option value="10">Estação Osasco</option>
+            <option value="11">Estação Presidente Altino</option>
+            <option value="12">Estação Barueri</option>
+            <option value="13">Estação Aldeia da Serra</option>
+            <option value="14">Estação Santana de Parnaíba</option>
+            <option value="15">Estação Jandira</option>
+            <option value="16">Estação Itapevi</option>
+            <option value="17">Estação Engenheiro Cardoso</option>
+
+            <!-- Linha 10 - Turquesa -->
+            <option value="18">Estação Brás</option>
+            <option value="19">Estação Mooca</option>
+            <option value="20">Estação Bresser-Mooca</option>
+            <option value="21">Estação Tatuapé</option>
+            <option value="22">Estação Corinthians-Itaquera</option>
+            <option value="23">Estação Guaianases</option>
+            <option value="24">Estação São Miguel Paulista</option>
+            <option value="25">Estação Calmon Viana</option>
+            <option value="26">Estação Ferraz de Vasconcelos</option>
+            <option value="27">Estação Poá</option>
+            <option value="28">Estação Mogi das Cruzes</option>
+
+            <!-- Linha 11 - Coral -->
+            <option value="29">Estação Luz</option>
+            <option value="30">Estação Brás</option>
+            <option value="31">Estação Mooca</option>
+            <option value="32">Estação Tatuapé</option>
+            <option value="33">Estação Corinthians-Itaquera</option>
+            <option value="34">Estação Guaianases</option>
+            <option value="35">Estação São Miguel Paulista</option>
+            <option value="36">Estação Calmon Viana</option>
+            <option value="37">Estação Ferraz de Vasconcelos</option>
+            <option value="38">Estação Poá</option>
+            <option value="39">Estação Mogi das Cruzes</option>
+
+            <!-- Linha 12 - Safira -->
+            <option value="40">Estação Brás</option>
+            <option value="41">Estação Tamanduateí</option>
+            <option value="42">Estação Santo André</option>
+            <option value="43">Estação Utinga</option>
+            <option value="44">Estação São Bernardo do Campo</option>
+            <option value="45">Estação Ribeirão Pires</option>
+            <option value="46">Estação Rio Grande da Serra</option>
+
+            <!-- Linha 13 - Jade -->
+            <option value="47">Estação Engenheiro Goulart</option>
+            <option value="48">Estação Guarulhos-Cecap</option>
+            <option value="49">Estação Aeroporto-Guarulhos</option>
+          </select>
+
+          <i id="publicacao-btn-cal" class="bi bi-calendar2-fill"></i>
+          <input type="date" id="datePicker" min="1922-04-01" max="2024-10-10" required>
+          <button type="button" onclick="selecionar()" class="publicacao-btn-img" id="icons"><i
+              class="bi bi-card-image"></i></i></button>
+        </div>
+        <div class="publicacao-buttons">
+          <input type="button" name="btn-publicar" id="publicacao-btn-fechar" value="Fechar" onclick="ocultarPubli()">
+          <input type="submit" name="btn-publicar" id="publicacao-btn-enviar" value="Enviar">
+        </div>
+      </div>
+    </form>
+  </section>
+  <!-- Fim da Aba de Publicar Historia -->
+
+  <!-- Aba de Infos -->
+  <div class="explicacao" style="visibility: hidden">
+    <div class="titulo-expli">
+      O que é a History CPTM?
+    </div>
+    <div class="texto-expli">
+      Todos os dias, nas estações e vagões da Companhia Paulista de Trens Metropolitanos, dezenas de histórias se
+      desenrolam. Seja o reencontro com amigos que não vemos há anos, o encontro com o amor da nossa vida, momentos de
+      solidariedade que tocaram nossos corações ou outras situações igualmente marcantes, essas experiências são únicas
+      e emocionantes. Este site foi criado com o propósito de capturar e compartilhar essas histórias maravilhosas que
+      ocorrem em nossas dependências, permitindo que sejam apreciadas por todos.
+    </div>
+    <button onclick="ocultarExpli()" type="button" class="btn btn-danger" id="btn-ocultar">Fechar</button>
+  </div>
+  <!-- Fim Aba de Infos -->
+
+  <!-- Icones e Titulo do Publique Historia e Infos -->
+  <div class="texto-mensagem">
+    <button onclick="mostrarPubli()" type="button" class="btn btn-danger" id="btn-infoPubli">Publique sua
+      história</button>
+    <button onclick="mostrarExpli()" type="button" class="btn btn-danger" id="btn-infoExpli"><i
+        class="bi bi-info-circle"></i></button>
+  </div>
+  <!-- Fim Icones e Titulo do Publique Historia e Infos -->
+
+  <!-- Caixas com historias de 1 à 12 -->
+  <div class="container-boxs">
+
+    <!-- Historia 1 -->
+    <a href="historia1.html">
+      <div class="box-publi" id="box1">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Metro Tatuapé
+          <h2>Reencontro de amigas depois de 10 anos no Metro</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Fim Historia 1 -->
+
+    <!-- Historia 2 -->
+    <a href="historia2.html">
+      <div class="box-publi" id="box2">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Estação Mogi das Cruzes
+          <h2>Trem está sempre salvando nossas vidas em situações extremamente complicada!</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Fim Historia 2 -->
+
+    <!-- Historia 3 -->
+    <a href="historia3.html">
+      <div class="box-publi" id="box3">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Estação Tatuapé
+          <h2>Levei minha família ao
+            Shopping Tatuapé de trem e metrô.</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Fim Historia 3 -->
+
+    <!-- Historia 4 -->
+    <a href="historia4.html">
+      <div class="box-publi" id="box4">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Estação Jundiaí
+          <h2>Um dia especial para mim e minha recém noiva.</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Fim Historia 4 -->
+
+    <!-- Historia 5 -->
+    <a href="historia5.html">
+      <div class="box-publi" id="box5">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Estação USP Leste
+          <h2>Pegamos o trem após a de formatura para ir na pizzaria em
+            São Paulo.</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Fim Historia 5 -->
+
+    <!-- Historia 6 -->
+    <a href="historia6.html">
+      <div class="box-publi" id="box6">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Estação Palmeiras Barra-Funda
+          <h2>Reencontrei minha amiga que não vejo a 5 anos na Estação Barra-Funda!</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Fim Historia 6 -->
+
+    <!-- Historia 7 -->
+    <a href="historia7.html">
+      <div class="box-publi" id="box7">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Estação Luz
+          <h2>Voltando do trabalho no trem relembrar histórias e fortalecer a amizade.</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Fim Historia 7 -->
+
+    <!-- Historia 8 -->
+    <a href="historia8.html">
+      <div class="box-publi" id="box8">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Estação Maua
+          <h2>Um trem com tema da barbie que me surpreendeu!</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Fim Historia 8 -->
+
+    <!-- Historia 9 -->
+    <a href="historia9.html">
+      <div class="box-publi" id="box9">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Estação Paranapiacaba
+          <h2>Um trem sem interrupções com boa vista!</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Fim Historia 9 -->
+
+    <!-- Historia 10 -->
+    <a href="historia10.html">
+      <div class="box-publi" id="box10">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Estação Brás
+          <h2>Natal com as amigas</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Fim Historia 10 -->
+
+    <!-- Historia 11 -->
+    <a href="historia11.html">
+      <div class="box-publi" id="box11">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Estação Itaquera
+          <h2>Viagem de trem fantasiados para o Halloween!</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Fim Historia 11 -->
+
+    <!-- Historia 12 -->
+    <a href="historia12.html">
+      <div class="box-publi" id="box12">
+        <div class="title">
+          <i class="bi bi-geo-alt"></i> Estação Tucuruvi
+          <h2>Encontro de amigas para ir ao carnaval de São Paulo</h2>
+        </div>
+      </div>
+    </a>
+    <!-- Historia 12 -->
+  </div>
+  <!-- Fim Caixas com historias de 1 à 12 -->
+
+  <!-- Navegação 1  2  3 -->
+  <div class="navegacao">
+    <nav aria-label="...">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link disabled" href="#" tabindex="-1">Anterior</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item">
+          <a class="page-link" href="#">Próximo</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- Fim Navegação 1  2  3 -->
+
+  <!-- Rodape -->
+  <footer>
+    <div class=container-footer>
+      <div class="icons">
+        <a href="https://www.instagram.com/cptm_oficial/">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="https://x.com/cptm_oficial">
+          <i class="bi bi-twitter-x"></i>
+
+        </a>
+        <a href="https://www.youtube.com/channel/UC1_vofpnSLs718hZbhoieaw">
+          <i class="bi bi-youtube"></i>
+        </a>
+        <a href="https://www.tiktok.com/@cptm">
+          <i class="bi bi-tiktok"></i>
+        </a>
+        <a href="https://www.facebook.com/CPTM.fanpage/">
+          <i class="bi bi-facebook"></i>
+        </a>
+
+      </div>
+
+      <div class="copyright">
+        <p>© CPTM. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+  <!-- Fim Rodapé -->
+
+</body> <!-- Fim Corpo -->
+
+</html>

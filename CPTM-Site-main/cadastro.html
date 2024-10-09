@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="icon" href="assets/img/favicons/favicon.ico">
+    <link rel="stylesheet" href="assets/css/csscadastro.css">
+
+    <script>
+
+        function validarEmail() {
+            // Obter os valores dos campos de email
+            var email = document.getElementById("email").value;
+            var emailrep = document.getElementById("emailrep").value;
+            var senha = document.getElementById("senha").value;
+            var senharep = document.getElementById("senharep").value;
+
+            // Verificar se os emails são iguais
+            if (email !== emailrep) {
+                alert("Os e-mails não coincidem. Por favor, verifique.");
+                return false;  // Evita o envio do formulário
+            }
+            else if (senha !== senharep) {
+                alert("As senhas não coincidem. Por favor, verifique.");
+                return false;
+            }
+
+            return true;  // Permite o envio do formulário
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <!-- Div que contém todo o conteúdo de cadastro -->
+    <div class="container">
+        <div class="titulo">
+            <img src="assets/img/imgloading.png">
+            <h1>Faça seu cadastro</h1>
+        </div>
+
+        <!-- Div que contém o cadastro abaixo do titulo -->
+        <div class="container-login">
+            <div class="area-login">
+
+                <!-- Formulário de envio do cadastro -->
+                <form id="form" onsubmit="return validarEmail()">
+
+                    <!-- Campo de nome e contato -->
+                    <div class="nome-cpf">
+
+                        <div class="UCN">
+
+                        
+                        <input type="text" id="name-contato" placeholder="Nome do Usuário" required>
+                        <input type="text" id="cpf-contato" placeholder="CPF" required>
+                        <input type="number" id="numero-contato" placeholder="Número: (XX)XXXXX-XXXX" required>
+                    </div>
+
+                    <!-- Campos de email -->
+       
+                    <div class="doisE">
+                        <input type="email" id="email" placeholder="Email: exemplo@gmail.com" required>
+                        <input type="email" id="emailrep" placeholder="Repita seu Email" required>
+                    </div>
+
+                    <!-- Campos de senha -->
+                   
+                    <div class="senhasdois">
+                        <input type="password" id="senha" placeholder="Senha" required>
+                        <input type="password" id="senharep" placeholder="Repita sua Senha" required>
+                    </div>
+                    <div class="botaosubmit">
+                        <input type="submit" id="submit-contato" value="Cadastrar">
+                    </div>
+                    </div>
+
+                    <!-- Botão do submit -->
+                    
+                </form>
+                <!-- Fim do formulário -->
+            </div>
+
+            <!-- Imagem que fica no canto da tela -->
+        </div>
+    </div>
+
+</body>
+
+</html>

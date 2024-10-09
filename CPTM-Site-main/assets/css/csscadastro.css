@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/fundo-background.png);
+}
+
+
+/* Div principal que contem tudo */
+.container{
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color:#d64f4f ;
+    width:80vw;
+    border-radius: 20px;
+    box-shadow: 6px 4px #aa3d3d;
+    height: 50vh;
+    padding: 5%;
+}
+
+.container-login{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.area-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+.container{
+    height: 180vw !important;
+}
+
+.container-login{
+    align-items: center;
+    justify-content: center;
+}
+
+
+}
+
+
+.area-login .nome-cpf{
+    display: flex;
+    flex-direction: row;
+    width:75vw;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+
+
+/* Modificar o CSS dos inputs a partir do type */
+
+input[type=text]{
+    border-radius: 5px;
+    padding: 10px 50px 10px 50px;
+    text-align: center;
+    margin: 2%;
+    border: none;
+    box-shadow: 4px 4px 2px #ad262a;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    height: 40px;
+    font-size: 19px;
+    width:200px
+}
+input[type=password]{
+    border-radius: 5px;
+    padding: 10px 50px 10px 50px;
+    text-align: center;
+    border: none;
+    margin: 2%;
+    box-shadow: 4px 4px 2px #ad262a;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    height: 40px;
+    font-size: 19px;
+    width:200px
+}
+
+input[type=email]{
+    border-radius: 5px;
+    padding: 10px 50px 10px 50px;
+    text-align: center;
+    margin: 2%;
+    border: none;
+    box-shadow: 4px 4px 2px #ad262a;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    height: 40px;
+    font-size: 19px;
+    width:200px
+}
+
+input[type=number]{
+    border-radius: 5px;
+    padding: 10px 50px 10px 50px;
+    text-align: center;
+    margin: 2%;
+    border: none;
+    box-shadow: 4px 4px 2px #ad262a;
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    height: 40px;
+    font-size: 19px;
+    width:200px
+}
+
+input[type=submit]{
+    font-family: "League Spartan", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    box-shadow: 4px 4px 2px #ad262a;
+    background-color: aliceblue;
+    border-radius: 20px;
+    border: none;
+    padding: 20%;
+    font-size: 25px;
+    position: relative;
+}
+
+input[type=submit]:hover{
+    background-color: #d64f4f;
+    color: white;
+    transition: 1s;
+    border: 1px solid white;
+}
+
+.UCN{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.doisE{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.senhasdois{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100% !important;
+}
+
+/* Página que fica acima do cadastrar */
+
+
+.titulo{
+    font-size: 25px;
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.titulo img{
+    width: 15%;
+    margin-right: 5%;
+}
+
+.img-login img{
+    width: 45%;
+    position: relative;
+    left: 70px;
+    top: 20px;
+}
+
+.img-login{
+    display: flex;
+    justify-items: end;
+}
