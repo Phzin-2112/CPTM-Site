@@ -1,2 +1,2 @@
-<h1> <a ><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&random=false&width=435&lines=Ea%C3%AD+blz%3F+Sou+Phzin.+.+." alt="Typing SVG" /></a> </h1>
+<h1> <a ><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&random=false&width=435&lines=Site+feito+para+CPTM.+.+." alt="Typing SVG" /></a> </h1>
 Site de apresentação sobre a CPTM e algumas histórias que acontecem todos os dias nas estações...
